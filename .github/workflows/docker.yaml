@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['gitea/runner-images:ubuntu-latest']
+        image: ['yourls:1.9.2']
 
     steps:
       - uses: actions/checkout@v4
