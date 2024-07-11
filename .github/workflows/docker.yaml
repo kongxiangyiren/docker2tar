@@ -22,7 +22,7 @@ jobs:
       - name: Upload image.tar
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.image }}
+          name: image
           path: image.tar
           compression-level: 9 # 压缩等级 默认 6
           #持续时间在此之后，物品将以天为单位到期。0表示使用默认保留。
