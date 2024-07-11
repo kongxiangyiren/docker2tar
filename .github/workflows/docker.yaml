@@ -1,0 +1,21 @@
+name: 下载docker镜像转tar
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download docker image
+        run: |
+          docker pull nginx:latest
+          docker save nginx:latest -o image.tar
+      - name: Upload image.tar
+        uses: actions/upload-artifact@v4
+        with:
+          name: image
+          path: image.tar
