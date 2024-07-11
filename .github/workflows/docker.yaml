@@ -8,14 +8,25 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # docker 镜像名称
+        image: ['nginx:latest']
+
     steps:
       - uses: actions/checkout@v4
       - name: Download docker image
         run: |
-          docker pull nginx:latest
-          docker save nginx:latest -o image.tar
+          docker pull ${{ matrix.image }}
+          docker save ${{ matrix.image }} -o image.tar
       - name: Upload image.tar
         uses: actions/upload-artifact@v4
         with:
-          name: image
+          name: ${{ matrix.image }}
           path: image.tar
+          compression-level: 9 # 压缩等级 默认 6
+          #持续时间在此之后，物品将以天为单位到期。0表示使用默认保留。
+          #至少1天。
+          #最多90天，除非从存储库设置页面进行更改。
+          #可选。返回到存储库设置。
+          retention-days: 1 # 保留天数
