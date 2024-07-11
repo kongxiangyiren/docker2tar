@@ -24,6 +24,7 @@ jobs:
         run: |
           docker pull ${{ matrix.image }}
           docker save ${{ matrix.image }} -o image.tar
+          docker rmi ${{ matrix.image }}
       - name: Upload image.tar
         uses: actions/upload-artifact@v4
         with:
