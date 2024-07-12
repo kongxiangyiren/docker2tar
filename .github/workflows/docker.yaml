@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['yourls:1.9.2']
+        image: ['gitea/runner-images:ubuntu-latest']
 
     steps:
       - uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
         with:
           name: image
           path: image.tar
-          compression-level: 9 # 压缩等级 默认 6
+          compression-level: 0 # 压缩等级 默认 6
           #持续时间在此之后，物品将以天为单位到期。0表示使用默认保留。
           #至少1天。
           #最多90天，除非从存储库设置页面进行更改。
