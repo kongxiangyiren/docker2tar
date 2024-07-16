@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['node:22.2.0']
+        image: ['node:22.2.0-alpine']
 
     steps:
       - uses: actions/checkout@v4
