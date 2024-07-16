@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['ghcr.io/gethomepage/homepage:v0.9.3']
+        image: ['node:22.2.0']
 
     steps:
       - uses: actions/checkout@v4
