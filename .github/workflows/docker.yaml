@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['mysql:8.2.0']
+        image: ['sickcodes/docker-osx:ventura']
 
     steps:
       - uses: actions/checkout@v4
