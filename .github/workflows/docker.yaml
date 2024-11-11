@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['sickcodes/docker-osx:ventura']
+        image: ['halcyonazure/lsky-pro-docker:latest']
 
     steps:
       - uses: actions/checkout@v4
