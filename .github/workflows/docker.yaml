@@ -12,11 +12,11 @@ on:
 
 jobs:
   release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['mcr.microsoft.com/windows/servercore:10.0.20348.2849-amd64']
+        image: ['nginx']
 
     steps:
       - uses: actions/checkout@v4
