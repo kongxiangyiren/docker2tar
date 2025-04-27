@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # docker 镜像名称
-        image: ['nginx']
+        image: ['ghcr.io/anduin2017/how-to-cook:latest']
 
     steps:
       - uses: actions/checkout@v4
